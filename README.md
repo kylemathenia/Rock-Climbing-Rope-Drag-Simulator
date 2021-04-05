@@ -1,6 +1,6 @@
 # Rock-Climbing-Rope-Drag-Simulator
 
-Find simulated rope drag for rock climbing routes on a vertical walls.
+Find the simulated rope drag for rock climbing routes on a vertical walls.
 
 To download the executable app and learn more about the program go to:
 https://sites.google.com/view/relativelyrad/rope-drag-simulation/motivation-methods
