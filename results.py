@@ -10,9 +10,7 @@ def plot_results(route):
     route_plot = fig.add_subplot(131,title='Route',facecolor='white', aspect='equal', xlabel='Meters', ylabel='Meters', xmargin=.2)
     route_plot.spines['right'].set_visible(False)
     route_plot.spines['top'].set_visible(False)
-    #plot the lines and color it blue. x's list and y's list. 
     route_plot.plot(route.path_x_vals,route.path_y_vals,'c')
-    #plot the points and color them black.
     route_plot.scatter(route.x_vals,route.y_vals,s=10,c='red')
     for i in range(0,len(route.x_vals)):
         route_plot.annotate(str(i), # this is the text
