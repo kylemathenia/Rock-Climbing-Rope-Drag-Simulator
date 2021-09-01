@@ -9,6 +9,6 @@ Find simulated rope drag for rock climbing routes on a vertical walls.
 
 [Download the app here.](https://drive.google.com/drive/folders/1RlB62WuX6S0meE5I-VndAh5ffYyT69KE)
 
-There are Matlab and Python versions. Run the Python version from command prompt due to Matplotlib backend.
+There are Matlab and Python versions.
 
 Matplotlib version 3.2.2. Matplotlib version 3.3 will not work. Used old version due to Pyinstaller constraint. 
