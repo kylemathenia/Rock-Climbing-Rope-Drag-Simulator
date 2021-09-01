@@ -29,7 +29,7 @@ def main():
             points=rds_funcs.ask_for_route()
         
         
-        #create an instance of the Route class. 
+        #Create a Route class instance from route points. 
         route=simulation.Route(points)
         
         
@@ -37,7 +37,7 @@ def main():
             try:
                 #Get approximation for route.
                 route.catenary_approx()
-                #route.linear_approx() #This could be used for a linear approximation.
+                #route.linear_approx() #This could be used for only a linear approximation.
                 
                 #Get results and show.
                 fig=results.plot_results(route)
