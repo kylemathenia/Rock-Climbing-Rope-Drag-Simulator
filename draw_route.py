@@ -1,4 +1,4 @@
-# https://stackoverflow.com/questions/37363755/python-mouse-click-coordinates-as-simply-as-possible?rq=1
+# Adopted and modified from: https://stackoverflow.com/questions/37363755/python-mouse-click-coordinates-as-simply-as-possible?rq=1
 
 
 import numpy as np
