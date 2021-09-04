@@ -817,14 +817,14 @@ axis([0, 180, 0, num_elements]);
 %% Code Info
 % Outline
 
-%	• Inputs
-% 	• General Setup
-% 	• Variable Initialization
-% 	• Linear Approximation
-% 	• Catenary Approximation
-% 	• Length of Route
-% 	• Display Results
-% 	• Plot Results
+%	Â• Inputs
+% 	Â• General Setup
+% 	Â• Variable Initialization
+% 	Â• Linear Approximation
+% 	Â• Catenary Approximation
+% 	Â• Length of Route
+% 	Â• Display Results
+% 	Â• Plot Results
 
 
 %% Functions
@@ -932,4 +932,3 @@ function Drag_After=RDb2RDa(Friction_Equation,Rope_Drag_Before,Deflection_Angle,
         disp('Enter "Experimentally Found", "Capstan", "Common", or "Linear"')
     end
     
-end %yay. 935 lines? wow.
