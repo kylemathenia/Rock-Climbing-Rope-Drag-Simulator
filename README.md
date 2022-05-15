@@ -9,4 +9,4 @@ Learn more at [the site.](https://sites.google.com/view/relativelyrad/rope-drag-
 
 Download the app [here.](https://drive.google.com/drive/folders/1RlB62WuX6S0meE5I-VndAh5ffYyT69KE)
 
-There are Matlab and Python versions.
+Python and Matlab versions.
