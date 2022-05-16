@@ -8,5 +8,3 @@ Find simulated rope drag for rock climbing routes for non-linear rope paths on a
 Learn more at [the site.](https://sites.google.com/view/relativelyrad/rope-drag-simulation/motivation-methods)
 
 Download the app [here.](https://drive.google.com/drive/folders/1RlB62WuX6S0meE5I-VndAh5ffYyT69KE)
-
-Python and Matlab versions.
