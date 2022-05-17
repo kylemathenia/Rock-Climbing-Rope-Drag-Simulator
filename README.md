@@ -6,6 +6,4 @@ Find simulated rope drag for rock climbing routes for non-linear rope paths on a
 
 ![Rope Drag Simulator](https://media.giphy.com/media/g6vaK7HUJW7ccrwknU/giphy.gif?cid=790b761100929d86482e4bb73c2bac6caf937608ea45f0ea&rid=giphy.gif&ct=g)
 
-Learn more at [the site.](https://sites.google.com/view/relativelyrad/rope-drag-simulation/motivation-methods)
-
 ## [Download](https://drive.google.com/drive/folders/1RlB62WuX6S0meE5I-VndAh5ffYyT69KE)
