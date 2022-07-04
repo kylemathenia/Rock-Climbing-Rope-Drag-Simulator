@@ -1,6 +1,7 @@
-# Adopted and modified from: https://stackoverflow.com/questions/37363755/python-mouse-click-coordinates-as-simply-as-possible?rq=1
-# This creates the GUI interface to select points for the route. 
-
+"""
+GUI interface.
+Adopted and modified from: 'https://stackoverflow.com/questions/37363755/python-mouse-click-coordinates-as-simply-as-possible?rq=1'
+"""
 
 import numpy as np
 import matplotlib.pyplot as plt

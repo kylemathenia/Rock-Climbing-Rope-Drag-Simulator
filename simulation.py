@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Nov  3 11:33:03 2020
-
-@author: Kyle
-"""
 
 import parameters
 import rds_funcs
@@ -15,12 +9,10 @@ from scipy.optimize import fsolve
 METER_2_FEET=3.281
 FEET_2_METER=0.3048
 
-
 percent_change=parameters.percent_change
 density=parameters.density
 path_spacing=parameters.path_spacing
 
-    
 class Route:
     def __init__(self, points):
         points.insert(0,[points[0][0],0])   #add the ground point directly underneath 1st pt.
@@ -46,10 +38,7 @@ class Route:
         self.cat_path_point=None        #unused for now
         self.cat_iters_pathx=[]         #unused for now
         self.cat_iters_pathy=[]         #unused for now
-        
-    
-    
-    
+
     #Resets values 
     def __reset(self):
         self.path_x_vals=[]             #x values for path of the rope. 
@@ -67,11 +56,7 @@ class Route:
         self.cat_path_point=None        #unused for now
         self.cat_iters_pathx=[]         #unused for now
         self.cat_iters_pathy=[]         #unused for now
-    
-    
-    
-    
-    
+
     #Climbers in the US are familiar with lbs and meters... Calculation are done in imperial.
     def __convert_lengths(self,CONVERSION):
         global METER_2_FEET
@@ -89,12 +74,7 @@ class Route:
         self.x_vals=[i*CONVERSION for i in self.x_vals]
         #conver y_vals
         self.y_vals=[i*CONVERSION for i in self.y_vals]
-           
-    
-    
-    
-    
-    
+
     #Linear approximation of rope drag. 
     def linear_approx(self):
         global METER_2_FEET
@@ -140,12 +120,7 @@ class Route:
                                   for i in range(0,self.num_points)]
         self.__convert_lengths(FEET_2_METER)
         return self
-    
-    
-    
-    
-    
-    
+
     #Catenary approximation of rope drag. 
     #Optional cat_path_point argument if you want to capture the catenary path data from that point to the next. Defaults to None.
     def catenary_approx(self,cat_path_point=None):
@@ -173,13 +148,7 @@ class Route:
                                   for i in range(0,self.num_points)]
         #covert to metric
         self.__convert_lengths(FEET_2_METER)
-    
-    
-    
-    
-    
-    
-    
+
     #Stores catenary values for a single point on the route. 
     def __find_catenary(self, i):
         xc=self.x_vals[i]      #x value of current point.
@@ -326,14 +295,7 @@ class Route:
                 self.drag_before[i+1]=((da_h)/(abs(math.cos(math.radians(self.heading_in[i+1])))))
                 self.weight_prev_rope_segment[i+1]=self.drag_before[i+1]-self.drag_after[i]
                 self.total_rope_weight[i+1]=self.total_rope_weight[i]+self.weight_prev_rope_segment[i+1]
-            
-            
-            
-            
-            
-            
-            
-            
+
     #stores approximation values if there is no bend.    
     def __no_bend_results(self,i):
         self.drag_after[i]=self.drag_before[i]
@@ -341,13 +303,7 @@ class Route:
         self.total_rope_weight[i+1]=self.total_rope_weight[i]+self.weight_prev_rope_segment[i+1]
         self.path_x_vals+=[self.x_vals[i],self.x_vals[i+1]]
         self.path_y_vals+=[self.y_vals[i],self.y_vals[i+1]]
-    
-    
-    
-    
-    
-    
-    
+
     #stores approximation values if the next point is directly above.   
     def __bend_to_vert_results(self,i):
         self.deflec_angles[i]=rds_funcs.find_deflec_angle(self.heading_in[i],self.heading_out[i])
@@ -357,13 +313,7 @@ class Route:
         self.total_rope_weight[i+1]=self.total_rope_weight[i]+self.weight_prev_rope_segment[i+1]
         self.path_x_vals+=[self.x_vals[i],self.x_vals[i+1]]
         self.path_y_vals+=[self.y_vals[i],self.y_vals[i+1]]
-    
-    
-    
-    
-    
-    
-    
+
     #returns a list of lists for coordinates for the catenary path of the rope. 
     def __find_cat_path(self, a,x_off,y_off,xc,xn):
         """create a vector of x values from from min to max x coords with path spacing"""
@@ -378,14 +328,3 @@ class Route:
         for x in range(0,len(x_path)):
             path.append([x_path[x],((a*math.cosh((x-x_off)/a))+y_off)])
         return path
-    
-    
-        
-        
-        
-        
-        
-        
-
-        
-    

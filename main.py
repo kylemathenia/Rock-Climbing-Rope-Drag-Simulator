@@ -1,8 +1,5 @@
-# -*- coding: utf-8 -*-
 """Vist https://sites.google.com/view/relativelyrad/rope-drag-simulation/motivation-methods
 for more info about how it works."""
-
-
 
 import rds_funcs
 import draw_route
@@ -10,15 +7,12 @@ import simulation
 import results
 import warnings
 
-
 warnings.simplefilter("ignore",UserWarning)
-
 
 def main():
     print('\n'*2)
-    plot_height=30    #initial plot height.
-    
-    #Loop simulator forever.
+    plot_height=30
+
     while True:
         #get info from user.
         mode=rds_funcs.ask_draw_or_enter()
@@ -28,11 +22,9 @@ def main():
         else:  #mode=='enter'
             points=rds_funcs.ask_for_route()
         
-        
         #Create a Route class instance from route points. 
         route=simulation.Route(points)
-        
-        
+
         while True:
             try:
                 #Get approximation for route.

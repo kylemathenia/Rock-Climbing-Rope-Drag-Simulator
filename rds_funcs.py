@@ -1,12 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Nov  3 22:38:24 2020
-
-@author: Kyle
-"""
-
-
-"""This file holds supporting functions for the 
+"""This file holds supporting functions for the
 rope drag simulator series of files"""
 
 
@@ -19,13 +11,9 @@ import re
 import datetime
 import time
 
-
 #constants.
 friction_eq=parameters.friction_equation
 friction_coefficient=parameters.friction_coefficient
-
-
-
 
 #Returns the heading of the rope. 90 is up.
 #Directly up is 90 degrees, left is 180, down is 270, etc.
@@ -48,10 +36,6 @@ def find_heading(cur_pt, next_pt, slope='linear'):
     #If route is going straight up:
     if cur_x == next_x: Heading = 90
     return Heading
-    
-
-
-
 
 #returns deflection angle. 
 def find_deflec_angle(head_in, head_out):
@@ -60,10 +44,6 @@ def find_deflec_angle(head_in, head_out):
         angle=(abs(head_out-head_in)) - (2*(dif-180))
     else: angle=abs(head_out-head_in)
     return angle
-
-
-
-
 
 #returns drag after. Could switch equations in the parameters file. 
 def find_drag_after(drag_before,deflec_angle):
@@ -125,13 +105,7 @@ def find_drag_after(drag_before,deflec_angle):
     else:
         print('You did not enter a valid input for friction equation in the input section.')
         print('Enter "Experimentally Found", "Capstan", "Common", or "Linear"')
-    
     return Drag_After
-
-
-
-
-
 
 #returns height of plot if user wants to change it. 
 def ask_area_height(height):
@@ -150,11 +124,6 @@ def ask_area_height(height):
         return height
     else:
         return height
-    
-    
-
-
-
 
 def ask_draw_or_enter():
     ans=input('\nDo you want to draw the route or enter points? (draw/enter)\n')
@@ -162,11 +131,6 @@ def ask_draw_or_enter():
         print('Invailid input.')
         ans=input('\nDo you want to draw the route or enter points? (draw/enter)\n')
     return ans
-    
-
-
-        
-    
 
 def ask_for_route():
     ans=input('Enter coordinate points for the bend locations in the form [x1,y1], [x2,y2], [x3,y3]...\n')
@@ -175,10 +139,6 @@ def ask_for_route():
         ans=input('Enter coordinate points for the bend locations in the form [x1,y1], [x2,y2], [x3,y3]...:\n\n')
         points=convert_input_route_to_list(ans)
     return points
-
-
-
-
 
 #If the user inputs coordinates for a route, convert those to a list of points. 
 def convert_input_route_to_list(ans):
@@ -201,11 +161,6 @@ def convert_input_route_to_list(ans):
             print('\nInvailid entry. Please try again. \n')
             return False
 
-
-
-
-
-
 def print_results(route):
     print('\n\nRoute:\n')
     print(route.points_unconverted)
@@ -219,11 +174,6 @@ def print_results(route):
                                         round(float(route.drag_before[i]),2))
         print(string.expandtabs())
 
-    
-
-
-
-
 def ask_save_data():
     ans=input('\nDo you want to save the data to a txt file? (y/n)\n')
     while ans!='n' and ans!='y':
@@ -233,11 +183,7 @@ def ask_save_data():
         return False
     else:
         return True
-    
-    
-    
-    
-    
+
 def save_data(route):
     file=str(datetime.date.today())+'-'+str(int(time.time()))+'.txt'
     with open(file, 'w') as file_name:   #Using 'with open' as good practice.
@@ -252,10 +198,6 @@ def save_data(route):
                                             round(float(route.total_friction_drag[i]),2),
                                             round(float(route.drag_before[i]),2))
             file_name.write(string.expandtabs())    
-            
-            
-
-
 
 #Returns True or False for whether or not the catenary iterations are diverging.
 #Takes in a list of drag after approximations during the iteration.  
@@ -268,11 +210,7 @@ def diverging(da):
     if len(da)<6: return False
     elif most_recent_del>sec_most_recent_del: return True
     else: return False
-    
-    
-    
-    
-    
+
 #Takes a list of coordinate points. Returns the list with rounded numbers.
 def points_rounded(points):
     points_rounded=[]

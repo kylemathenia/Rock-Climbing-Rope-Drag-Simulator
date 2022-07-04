@@ -1,10 +1,6 @@
-# This file plots the route. 
-
 
 import matplotlib.pyplot as plt
 
-
-    
 #takes in a route object and returns a figure. 
 def plot_results(route):
     fig = plt.figure(figsize=[10,4.8])
