@@ -1,5 +1,7 @@
 # Rock-Climbing-Rope-Drag-Simulator
 
+A fun little project I did when learning to code. The code may be questionable, but the enthusiasm is evergreen.
+
 Find simulated rope drag for rock climbing routes for non-linear rope paths on a vertical walls. Create routes to test with a GUI. Experimentally developed emperical model for friction. 
 
 ## [Go to site](https://sites.google.com/view/relativelyrad/rope-drag-simulation/app-demo?authuser=0)
